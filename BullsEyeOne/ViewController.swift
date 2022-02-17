@@ -54,10 +54,9 @@ class ViewController: UIViewController {
         
         let action = UIAlertAction(
             title: "OK",
-            style: .default,
-            handler: { _ in
+            style: .default) { _ in
                 self.startNewRound()
-            })
+            }
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
