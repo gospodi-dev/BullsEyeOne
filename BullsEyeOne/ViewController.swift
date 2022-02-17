@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
     }
     
+    func startNewRound() {
+      targetValue = Int.random(in: 1...100)
+      currentValue = 50
+      slider.value = Float(currentValue)
+    }
+
+    
 
     @IBAction func showAlert() {
         let message = "The value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)"
