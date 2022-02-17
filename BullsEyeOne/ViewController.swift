@@ -11,10 +11,13 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     
     var currentValue: Int = 50
+    var targetValue = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
+        targetValue = Int.random(in: 1...100)
     }
     
 
