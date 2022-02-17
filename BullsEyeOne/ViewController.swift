@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var roundLabel: UILabel!
     
+    
     var currentValue = 0
     var targetValue = 0
     var score = 0
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        startNewGame()
     }
     
     @IBAction func showAlert() {
@@ -66,8 +67,10 @@ class ViewController: UIViewController {
       currentValue = lroundf(slider.value)
     }
     
-    @IBAction func startOver() {
-        startNewGame()
+    @IBAction func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
     }
     
     
@@ -77,12 +80,6 @@ class ViewController: UIViewController {
         currentValue = 50
         slider.value = Float(currentValue)
         updateLabels()
-    }
-    
-    func startNewGame() {
-      score = 0
-      round = 0
-      startNewRound()
     }
     
     func updateLabels() {
