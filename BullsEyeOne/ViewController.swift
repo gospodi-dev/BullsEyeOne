@@ -27,7 +27,9 @@ class ViewController: UIViewController {
       slider.value = Float(currentValue)
     }
 
-    
+    func updateLabels(){
+        targetLabel.text = String(targetValue)
+    }
 
     @IBAction func showAlert() {
         let message = "The value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)"
