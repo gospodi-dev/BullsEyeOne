@@ -66,12 +66,23 @@ class ViewController: UIViewController {
       currentValue = lroundf(slider.value)
     }
     
+    @IBAction func startOver() {
+        startNewGame()
+    }
+    
+    
     func startNewRound() {
         round += 1
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
         updateLabels()
+    }
+    
+    func startNewGame() {
+      score = 0
+      round = 0
+      startNewRound()
     }
     
     func updateLabels() {
