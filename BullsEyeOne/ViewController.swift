@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 50
     var targetValue = 0
+    var score = 0
     
 
     override func viewDidLoad() {
@@ -34,10 +35,12 @@ class ViewController: UIViewController {
 
     @IBAction func showAlert() {
         let difference = abs(targetValue - currentValue)
+        let points = 100 - difference
+        
+        score += points
 
-        let message = "The value of the slider is: \(currentValue)" +
-                      "\nThe target value is: \(targetValue)" +
-                      "\nThe difference is: \(difference)"
+        let message = "YOU scored \(points) points"
+                     
         
         let alert = UIAlertController(
             title: "Hello, World!",
