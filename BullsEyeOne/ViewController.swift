@@ -22,8 +22,7 @@ class ViewController: UIViewController {
     
 
     @IBAction func showAlert() {
-        let message = "The value of the slider is: \(currentValue)"
-        
+        let message = "The value of the slider is: \(currentValue)" + "\nThe target value is: \(targetValue)"
         
         let alert = UIAlertController(
             title: "Hello, World!",
