@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var targetLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
     
     
     var currentValue: Int = 50
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
 
     func updateLabels(){
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
     }
 
     @IBAction func showAlert() {
