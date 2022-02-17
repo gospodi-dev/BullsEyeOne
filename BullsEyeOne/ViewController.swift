@@ -16,8 +16,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentValue = lroundf(slider.value)
-        targetValue = Int.random(in: 1...100)
+        startNewRound()
     }
     
     func startNewRound() {
@@ -42,6 +41,8 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+        
+        startNewRound()
     }
     
     
