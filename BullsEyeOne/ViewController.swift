@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var roundLabel: UILabel!
     
-    var currentValue: Int = 50
+    var currentValue = 0
     var targetValue = 0
     var score = 0
     var round = 0
@@ -24,36 +24,26 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
-    func startNewRound() {
-        round += 1
-        targetValue = Int.random(in: 1...100)
-        currentValue = 50
-        slider.value = Float(currentValue)
-        updateLabels()
-    }
-    
-    func updateLabels(){
-        targetLabel.text = String(targetValue)
-        scoreLabel.text = String(score)
-        roundLabel.text = String(round)
-    }
-    
     @IBAction func showAlert() {
-        let difference = abs(targetValue - currentValue)
-        let points = 100 - difference
-        score += points
         
-        // add these lines
+        let difference = abs(targetValue - currentValue)
+        var points = 100 - difference
+
         let title: String
         if difference == 0 {
-            title = "Perfect!"
+          title = "Perfect!"
+          points += 100
         } else if difference < 5 {
-            title = "You almost had it!"
+          title = "You almost had it!"
+          if difference == 1 {
+            points += 50
+          }
         } else if difference < 10 {
-            title = "Pretty good!"
+          title = "Pretty good!"
         } else {
-            title = "Not even close..."
+          title = "Not even close..."
         }
+        score += points
         
         let message = "You scored \(points) points"
         
@@ -73,6 +63,25 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
+    @IBAction func sliderMoved(_ slider: UISlider) {
+      currentValue = lroundf(slider.value)
+    }
+    
+    func startNewRound() {
+        round += 1
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
+    }
+    
+   
     
 }
 
