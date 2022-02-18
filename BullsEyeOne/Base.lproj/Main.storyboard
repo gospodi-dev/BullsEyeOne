@@ -144,6 +144,21 @@
             </objects>
             <point key="canvasLocation" x="29.23538230884558" y="69.599999999999994"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="igE-VZ-Obr">
+            <objects>
+                <viewController id="EpE-hO-gKS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sDC-Kz-H8f">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RPY-SI-jy8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gQ-eh-GoB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="70"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="568" height="320"/>
